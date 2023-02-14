@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rohit and Aryaa :)</title>
+    <!-- <title>Rohit and Aryaa :)</title> -->
     <!--
 
 Template 2094 Mason
@@ -56,9 +56,32 @@ http://www.tooplate.com/view/2094-mason
                 </nav>
             </div>
         </div>
-
-        
     </div> <!-- container-fluid -->
+    <img id="present" src="present.png" alt="Present" onclick="reveal()"
+        style="
+        position: flex;
+        transform: translate(60%, 0%);
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000, 0 0 0 6px #fff, 0 0 0 8px #000, 0 0 0 10px #fff, 0 0 0 12px #000, 0 0 0 14px #fff, 0 0 0 16px #000, 0 0 0 18px #fff, 0 0 0 20px #000, 0 0 0 22px #fff, 0 0 0 24px #000, 0 0 0 26px #fff, 0 0 0 28px #000, 0 0 0 30px #fff, 0 0 0 32px #000, 0 0 0 34px #fff, 0 0 0 36px #000, 0 0 0 38px #fff, 0 0 0 40px #000, 0 0 0 42px #fff, 0 0 0 44px #000, 0 0 0 46px #fff, 0 0 0 48px #000, 0 0 0 50px #fff, 0 0 0 52px #000, 0 0 0 54px #fff, 0 0 0 56px #000, 0 0 0 58px #fff, 0 0 0 60px #000, 0 0 0 62px #fff, 0 0 0 64px #000, 0 0 0 66px #fff,"
+        }>
+    <img id="heart" src="heart_real.png" alt="photo" onclick="reveal()" style="
+            height: 600px;
+            width: 800px;
+            position: flex;
+            visibility: hidden;
+            transform: translate(60%, 0%);
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px #000, 0 0 0 6px #fff, 0 0 0 8px #000, 0 0 0 10px #fff, 0 0 0 12px #000, 0 0 0 14px
+            #fff, 0 0 0 16px #000, 0 0 0 18px #fff, 0 0 0 20px #000, 0 0 0 22px #fff, 0 0 0 24px #000, 0 0 0 26px #fff, 0 0 0 28px
+            #000, 0 0 0 30px #fff, 0 0 0 32px #000, 0 0 0 34px #fff, 0 0 0 36px #000, 0 0 0 38px #fff, 0 0 0 40px #000, 0 0 0 42px
+            #fff, 0 0 0 44px #000, 0 0 0 46px #fff, 0 0 0 48px #000, 0 0 0 50px #fff, 0 0 0 52px #000, 0 0 0 54px #fff, 0 0 0 56px
+            #000, 0 0 0 58px #fff, 0 0 0 60px #000, 0 0 0 62px #fff, 0 0 0 64px #000, 0 0 0 66px #fff,"
+            }>
 
     <!-- load JS files -->
 
@@ -68,7 +91,6 @@ http://www.tooplate.com/view/2094-mason
 
     <!-- Templatemo scripts -->
     <script>
-
         $(document).ready(function () {
 
             // init Masonry
@@ -89,11 +111,41 @@ http://www.tooplate.com/view/2094-mason
             $grid.imagesLoaded().progress(function () {
                 $grid.masonry('layout');
             });
-
-            // Update the current year in copyright
-            $('.tm-current-year').text(new Date().getFullYear());
         });
+    </script>
 
+    <script src="js/confetti.js"></script>
+
+    <script>
+        const start = () => {
+                setTimeout(function () {
+                    confetti.start()
+                }, 250); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
+            };
+
+            //  for stopping the confetti 
+
+            const stop = () => {
+                setTimeout(function () {
+                    confetti.stop()
+                }, 10000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
+            };
+        
+        const reveal = () => {
+            document.getElementById("present").style.display = "none";
+            document.getElementById("present").style.visibility = "hidden";
+            document.getElementById("present").style.opacity = "0";
+            document.getElementById("present").style.transition = "all 1s ease-in-out";
+            
+            document.getElementById("heart").style.display = "block";
+            document.getElementById("heart").style.visibility = "visible";
+            document.getElementById("heart").style.opacity = "1";
+            document.getElementById("heart").style.transition = "all 1s ease-in-out";
+            
+            start();
+            stop();
+        }
+            // after this here we are calling both the function so it works
     </script>
 </body>
 
